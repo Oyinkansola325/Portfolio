@@ -1,179 +1,634 @@
-<!DOCTYPE HTML>
-<!--
-	Oyinkansola Temiyemi's Portfolio
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Oyinkansola Temiyemi's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oyinkansola Temiyemi | Healthcare Analyst & Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #1a2610;
+    --mid: #2d4020;
+    --accent: #6abf45;
+    --lime: #8fe45a;
+    --white: #f8fdf4;
+    --muted: #b8d4a8;
+    --gold: #c9a84c;
+  }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    overflow-x: hidden;
+  }
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Oyinkansola Temiyemi's </strong>Portfolio</a>
-									<ul class="icons">
-										<li><a href="https://www.linkedin.com/in/oyinkansolatemiyemi" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-										<li><a href="https://www.facebook.com/profile.php?id=100017167388676&mibextid=ZbWKwL" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://x.com/Tioluwanimi234" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="https://medium.com/@oyinkanfe" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 20px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(26,38,16,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(106,191,69,0.15);
+  }
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #8fe45a;
+    letter-spacing: 1px;
+  }
+  nav ul { list-style: none; display: flex; gap: 36px; }
+  nav ul a {
+    color: #b8d4a8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+  }
+  nav ul a:hover { color: #8fe45a; }
 
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Hi, I’m Oyinkansola Temiyemi<br />
-									
-										</header>
-										<p> A Healthcare Data Analyst, Registered Nurse, and Researcher that leverages technology and data to improve patient safety and drive actionable healthcare insights. Passionate about combining clinical expertise with research and analytics to make care safer and smarter. </p>
-										<ul class="actions">
-											<li><a href="https://www.linkedin.com/in/oyinkansolatemiyemi" class="button big">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="images/IMG-20231006-WA0065.jpg" alt="" />
-									</span>
-								</section>
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(106,191,69,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Professional Strengths</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon fa-gem"></span>
-											<div class="content">
-												<h3> Data Analysis (Excel, SQL, Power BI, Tableau) </h3>
-												<p>I extract, clean, and model healthcare data to create dashboards and actionable insights that solve real-world problems.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-paper-plane"></span>
-											<div class="content">
-												<h3>Research Writing and Editing</h3>
-												<p>I conduct literature reviews, draft and edit research papers using SPSS to turn data into clear, accurate, and impactful findings. </p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-rocket"></span>
-											<div class="content">
-												<h3> Patient Safety and Technology </h3>
-												<p>I use technology and data-driven approaches to improve patient safety, optimize healthcare processes, and support evidence-based clinical decisions.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-signal"></span>
-											<div class="content">
-												<h3>Clinical Insights and Reporting</h3>
-												<p>Turning clinical and operational data into reports that guide decision-making.</p>
-											</div>
-										</article>
-									</div>
-								</section>
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(106,191,69,0.1);
+    border: 1px solid rgba(106,191,69,0.3);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #8fe45a;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .dot {
+    width: 6px; height: 6px;
+    background: #8fe45a;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>My Projects</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="#" class="image"><img 
-src="images/medical-files-with-stethoscope-social.jpg" alt="" /></a>
-											<h3>Hospital Patient Records Analysis with SQL </h3>
-											<p>The goal of this project is to answer realistic hospital management requests using SQL.
-											<P>Tool used: Excel, SQL </p>
-											<ul class="actions">
-											<li><a href="https://oyinkanfe.medium.com/hospital-patients-records-analysis-with-sql-148120dd4051" class="button">VIEW MY PROJECT</a></li>
-										</ul> 
-									       </article>
-									       <article> 
-										 <a href="#" class="image"><img src="images/603429d3fcd4f1cbc41db8ac_PNF9KM_FmhdLhijKYOgpSJPj4wUXxzDmDG0CyIwoHNiUwBvKW4HkNeWlWetX3EOPYYR_wwClKdeLkEI_ypLszDIBtTmOhGD1oG11TL9ISJRuR5wy1Q04twE4eO6YXruXIYNyomvF.jpeg" alt="" /></a>
-											<h3>Healthcare Workers' Mental Health Status and Stress Level</h3>
-											<p>This is a great project that shows valuable insights into healthcare workers' well-being and retention.
-											<p>Tool used: Excel, SQL and Tableau</p>
-											<ul class="actions">
-												<li><a href="https://public.tableau.com/views/HealthcareWorkersMentalHealthStatusandStressLevel/Dashboard1?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="button">CHECK THIS OUT</a></li>
-										</ul>
-										</article>
-									</div>
-								</section>
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: #8fe45a; }
 
-						</div>
-					</div>
+  .hero-subtitle {
+    font-size: 1rem;
+    color: #b8d4a8;
+    font-weight: 300;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .hero-tagline {
+    font-size: 1.15rem;
+    color: #f8fdf4;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 500px;
+  }
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+  .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+  .pill {
+    border: 1.5px solid rgba(106,191,69,0.5);
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #f8fdf4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+  .hero-btns { display: flex; gap: 16px; }
+  .btn-primary {
+    background: #8fe45a;
+    color: #1a2610;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(106,191,69,0.35);
+  }
+  .btn-secondary {
+    border: 1.5px solid rgba(106,191,69,0.5);
+    color: #8fe45a;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(106,191,69,0.1); }
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>MENU</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">HOMEPAGE</a></li>
-										<li><a href="https://medium.com/@oyinkanfe"">MY BLOG</a></li>
-										<li><a href="https://www.linkedin.com/in/oyinkansolatemiyemi">RECOMMENDATIONS</a></li>
-                                                                               
+  .hero-photo {
+    position: relative;
+    display: flex; justify-content: center; align-items: flex-end;
+    height: 560px;
+  }
+  .photo-frame {
+    position: relative;
+    width: 380px; height: 520px;
+    border-radius: 200px 200px 0 0;
+    overflow: hidden;
+    border: 3px solid rgba(106,191,69,0.3);
+  }
+  .photo-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .photo-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,38,16,0.4) 0%, transparent 50%);
+    border-radius: 200px 200px 0 0;
+  }
+  .glow-circle {
+    position: absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(106,191,69,0.12) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -45%);
+    z-index: -1;
+  }
 
+  .stats-strip {
+    background: #2d4020;
+    border-top: 1px solid rgba(106,191,69,0.15);
+    border-bottom: 1px solid rgba(106,191,69,0.15);
+    padding: 32px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #8fe45a;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: #b8d4a8;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 
-							<!-- Get in Touch -->
-								<nav id="getintouch">
-									<header class="major">
-										
-									<h2>GET IN TOUCH</h2>
-									</header>
-									<p>Are you interested in collaborating or learning more about my work? Please reach out to me via email or connect with me on social media.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="mailto: oyinkansolatemiyemi325@gmail.com">EMAIL ME</a></li>
-										<li class="icon solid fa-home">Nigeria </li>
-										 <li><a href="https://www.linkedin.com/in/oyinkansolatemiyemi" >LinkedIn</span></a></li>
-										<li><a href="https://x.com/Tioluwanimi234" >Twitter</a></li>
-										<li><a href="https://medium.com/@oyinkanfe" >Medium</a></li>
-										
-		
-									</ul>
-								</section>
+  section { padding: 90px 60px; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #8fe45a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-title span { color: #8fe45a; }
+  .section-desc {
+    color: #b8d4a8;
+    font-size: 1rem;
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 52px;
+  }
 
-							<!-- Footer -->
-								<footer id="footer">
-					B NL.~
-				<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
+  #skills { background: rgba(45,64,32,0.25); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .skill-card {
+    background: rgba(45,64,32,0.6);
+    border: 1px solid rgba(106,191,69,0.15);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8fe45a, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .skill-card:hover { border-color: rgba(106,191,69,0.4); transform: translateY(-4px); }
+  .skill-card:hover::before { opacity: 1; }
 
-						</div>
-					</div>
+  .skill-icon {
+    width: 48px; height: 48px;
+    background: rgba(106,191,69,0.12);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+  .skill-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .skill-card p { color: #b8d4a8; font-size: 0.88rem; line-height: 1.65; }
+  .skill-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .tool-tag {
+    background: rgba(106,191,69,0.1);
+    border: 1px solid rgba(106,191,69,0.2);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    color: #8fe45a;
+    font-weight: 500;
+  }
 
-			</div>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+    gap: 28px;
+  }
+  .project-card {
+    background: rgba(45,64,32,0.4);
+    border: 1px solid rgba(106,191,69,0.15);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .project-card:hover {
+    border-color: rgba(106,191,69,0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+  .project-img {
+    height: 200px;
+    background: linear-gradient(135deg, rgba(45,64,32,0.9), rgba(26,38,16,1));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem;
+  }
+  .project-content { padding: 28px; }
+  .project-tag {
+    background: rgba(106,191,69,0.12);
+    border: 1px solid rgba(106,191,69,0.25);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.72rem;
+    color: #8fe45a;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .project-card p { color: #b8d4a8; font-size: 0.88rem; line-height: 1.65; margin-bottom: 20px; }
+  .project-meta { display: flex; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+  .meta-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #b8d4a8; }
+  .meta-item span:first-child { color: #8fe45a; font-size: 0.9rem; }
+  .project-tools { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; }
+  .project-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: #8fe45a;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 12px; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  #about { background: rgba(45,64,32,0.2); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .about-photo {
+    width: 100%; height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid rgba(106,191,69,0.2);
+    position: relative;
+  }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+  .about-content p {
+    color: #b8d4a8;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 0.97rem;
+  }
+  .about-content p strong { color: #f8fdf4; }
+  .about-highlights {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-top: 32px;
+  }
+  .highlight { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #f8fdf4; }
+  .check {
+    width: 20px; height: 20px;
+    background: rgba(106,191,69,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #8fe45a;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+  }
 
-	</body>
+  #contact { text-align: center; }
+  .contact-card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: rgba(45,64,32,0.5);
+    border: 1px solid rgba(106,191,69,0.2);
+    border-radius: 28px;
+    padding: 56px;
+  }
+  .contact-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+  .contact-card h2 span { color: #8fe45a; }
+  .contact-card p { color: #b8d4a8; margin-bottom: 36px; font-size: 1rem; line-height: 1.7; }
+  .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(106,191,69,0.1);
+    border: 1px solid rgba(106,191,69,0.25);
+    border-radius: 999px;
+    padding: 12px 22px;
+    color: #f8fdf4;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { background: rgba(106,191,69,0.2); }
+
+  footer {
+    text-align: center;
+    padding: 28px;
+    border-top: 1px solid rgba(106,191,69,0.1);
+    color: #b8d4a8;
+    font-size: 0.82rem;
+  }
+  footer span { color: #8fe45a; }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    nav ul { gap: 20px; }
+    .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
+    .hero-photo { height: 380px; }
+    .photo-frame { width: 260px; height: 360px; }
+    .stats-strip { grid-template-columns: repeat(2,1fr); padding: 24px; }
+    section { padding: 60px 24px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .about-photo { height: 340px; }
+    .contact-card { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">OT</div>
+  <ul>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge"><span class="dot"></span> Open to Collaboration</div>
+    <h1>Oyinkansola<br><span>Temiyemi</span></h1>
+    <p class="hero-subtitle">RN · Healthcare Analyst · Researcher</p>
+    <p class="hero-tagline">Using research and data to solve problems and drive better healthcare outcomes.</p>
+    <div class="hero-pills">
+      <div class="pill">Research</div>
+      <div class="pill">Data</div>
+      <div class="pill">Writing</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="glow-circle"></div>
+    <div class="photo-frame">
+      <!-- Replace the src below with your actual photo path -->
+      <img src="YOUR_PHOTO.jpg" alt="Oyinkansola Temiyemi">
+      <div class="photo-overlay"></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num">2+</div>
+    <div class="stat-label">Years in Healthcare Analytics</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4+</div>
+    <div class="stat-label">Tools & Technologies</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Projects Completed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">RN</div>
+    <div class="stat-label">Registered Nurse</div>
+  </div>
+</div>
+
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <h2 class="section-title">Professional <span>Strengths</span></h2>
+  <p class="section-desc">Where clinical experience meets research and data — solving real problems with precision and purpose.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <h3>Data Analysis</h3>
+      <p>Extracting, cleaning, and modelling healthcare data to create dashboards and actionable insights that solve real-world problems.</p>
+      <div class="skill-tools">
+        <span class="tool-tag">Excel</span>
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">Power BI</span>
+        <span class="tool-tag">Tableau</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📝</div>
+      <h3>Research Writing & Editing</h3>
+      <p>Conducting literature reviews, drafting and editing research papers, and turning complex data into clear, accurate, and impactful findings.</p>
+      <div class="skill-tools">
+        <span class="tool-tag">SPSS</span>
+        <span class="tool-tag">Literature Reviews</span>
+        <span class="tool-tag">Academic Writing</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🏥</div>
+      <h3>Patient Safety & Technology</h3>
+      <p>Using data-driven approaches to improve patient safety, optimise healthcare processes, and support evidence-based clinical decisions.</p>
+      <div class="skill-tools">
+        <span class="tool-tag">Clinical Analytics</span>
+        <span class="tool-tag">Safety Protocols</span>
+        <span class="tool-tag">EBP</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📋</div>
+      <h3>Clinical Insights & Reporting</h3>
+      <p>Turning clinical and operational data into clear, structured reports that guide strategic decision-making for healthcare organisations.</p>
+      <div class="skill-tools">
+        <span class="tool-tag">Data Visualisation</span>
+        <span class="tool-tag">Healthcare Ops</span>
+        <span class="tool-tag">Strategy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">Work</div>
+  <h2 class="section-title">Featured <span>Projects</span></h2>
+  <p class="section-desc">Real problems. Real data. Real outcomes. Here's a look at what I've been building.</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-img">🏥</div>
+      <div class="project-content">
+        <span class="project-tag">SQL · Excel</span>
+        <h3>Hospital Patient Records Analysis</h3>
+        <p>Analysed hospital patient records to answer realistic hospital management requests — from bed occupancy patterns to readmission rates — using structured querying and data modelling.</p>
+        <div class="project-meta">
+          <div class="meta-item"><span>🎯</span> Operational Efficiency</div>
+          <div class="meta-item"><span>📍</span> Hospital Management</div>
+        </div>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">SQL</span>
+        </div>
+        <a href="https://oyinkanfe.medium.com/hospital-patients-records-analysis-with-sql-148120dd4051" target="_blank" class="project-link">View Project →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">🧠</div>
+      <div class="project-content">
+        <span class="project-tag">Excel · SQL · Tableau</span>
+        <h3>Healthcare Workers' Mental Health & Stress Levels</h3>
+        <p>Uncovered valuable insights into healthcare workers' wellbeing and retention risk through multi-tool analysis — identifying stress patterns that healthcare orgs can act on.</p>
+        <div class="project-meta">
+          <div class="meta-item"><span>🎯</span> Staff Wellbeing</div>
+          <div class="meta-item"><span>📍</span> HR & Retention</div>
+        </div>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">SQL</span>
+          <span class="tool-tag">Tableau</span>
+        </div>
+        <a href="https://public.tableau.com/views/HealthcareWorkersMentalHealthStatusandStressLevel/Dashboard1" target="_blank" class="project-link">View Dashboard →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-photo">
+      <!-- Replace the src below with your actual photo path -->
+      <img src="YOUR_PHOTO.jpg" alt="Oyinkansola Temiyemi">
+    </div>
+    <div class="about-content">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Clinical Mind. <span>Analytical Eye.</span></h2>
+      <p>I'm a <strong>Registered Nurse, Healthcare Analyst, and Researcher</strong> on a mission to close the gap between raw data and real-world outcomes. I believe the best insights come from people who've actually been in the room — and I've been in that room.</p>
+      <p>My background in nursing gives me something most analysts don't have: I understand not just what the data says, but <strong>what it means for patients and teams</strong>. That clinical lens shapes everything I do — from the questions I ask to the stories I tell with data.</p>
+      <p>I specialise in working with healthcare organisations to turn complex data and research into <strong>clear, actionable strategies</strong>. Whether it's analysing patient records, mapping workforce wellbeing, or writing research that drives change — I'm here for the problem-solving.</p>
+      <div class="about-highlights">
+        <div class="highlight"><div class="check">✓</div> Evidence-based approach</div>
+        <div class="highlight"><div class="check">✓</div> Clinical + data expertise</div>
+        <div class="highlight"><div class="check">✓</div> Research & academic writing</div>
+        <div class="highlight"><div class="check">✓</div> Patient safety focus</div>
+        <div class="highlight"><div class="check">✓</div> SQL, Excel, Tableau, Power BI</div>
+        <div class="highlight"><div class="check">✓</div> Creative problem solver</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card">
+    <h2>Let's Work <span>Together</span></h2>
+    <p>Have a project, collaboration, or research opportunity? I'd love to hear about it.</p>
+    <div class="contact-links">
+      <a href="mailto:oyinkansolatemiyemi325@gmail.com" class="contact-link">✉️ Email Me</a>
+      <a href="https://www.linkedin.com/in/oyinkansolatemiyemi" target="_blank" class="contact-link">💼 LinkedIn</a>
+      <a href="https://medium.com/@oyinkanfe" target="_blank" class="contact-link">✍️ Medium Blog</a>
+      <a href="https://x.com/Tioluwanimi234" target="_blank" class="contact-link">𝕏 Twitter</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>Oyinkansola Temiyemi</span> · RN | Healthcare Analyst & Researcher</p>
+</footer>
+
+</body>
 </html>
