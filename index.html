@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oyinkansola Temiyemi | Healthcare Analyst & Researcher</title>
+
+<title>Oyinkansola Temiyemi | Nurse Researcher, Healthcare Data & Digital Health</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --dark: #1a2610;
@@ -16,8 +19,15 @@
     --gold: #c9a84c;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -26,15 +36,975 @@
     overflow-x: hidden;
   }
 
+  /* NAVIGATION */
   nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
     padding: 20px 60px;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(26,38,16,0.92);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(26, 38, 16, 0.92);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(106,191,69,0.15);
+    border-bottom: 1px solid rgba(106, 191, 69, 0.15);
   }
+
   nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--lime);
+    letter-spacing: 1px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+  }
+
+  nav ul a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+  }
+
+  nav ul a:hover {
+    color: var(--lime);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at 70% 50%,
+      rgba(106, 191, 69, 0.08) 0%,
+      transparent 65%
+    );
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(106, 191, 69, 0.1);
+    border: 1px solid rgba(106, 191, 69, 0.3);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--lime);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--lime);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 span {
+    color: var(--lime);
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+  }
+
+  .hero-tagline {
+    font-size: 1.15rem;
+    color: var(--white);
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  .hero-pills {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+
+  .pill {
+    border: 1.5px solid rgba(106, 191, 69, 0.5);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--lime);
+    color: var(--dark);
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(106, 191, 69, 0.35);
+  }
+
+  .btn-secondary {
+    border: 1.5px solid rgba(106, 191, 69, 0.5);
+    color: var(--lime);
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(106, 191, 69, 0.1);
+  }
+
+  /* HERO PHOTO */
+  .hero-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 560px;
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 380px;
+    height: 520px;
+    border-radius: 200px 200px 0 0;
+    overflow: hidden;
+    border: 3px solid rgba(106, 191, 69, 0.3);
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(26, 38, 16, 0.4) 0%,
+      transparent 50%
+    );
+    border-radius: 200px 200px 0 0;
+  }
+
+  .glow-circle {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(106, 191, 69, 0.12) 0%,
+      transparent 70%
+    );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    z-index: -1;
+  }
+
+  /* STATS */
+  .stats-strip {
+    background: var(--mid);
+    border-top: 1px solid rgba(106, 191, 69, 0.15);
+    border-bottom: 1px solid rgba(106, 191, 69, 0.15);
+    padding: 32px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--lime);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* GENERAL SECTIONS */
+  section {
+    padding: 90px 60px;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--lime);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-title span {
+    color: var(--lime);
+  }
+
+  .section-desc {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 650px;
+    line-height: 1.7;
+    margin-bottom: 52px;
+  }
+
+  /* RESEARCH NICHE */
+  #research {
+    background: rgba(45, 64, 32, 0.18);
+  }
+
+  .research-box {
+    background: rgba(45, 64, 32, 0.55);
+    border: 1px solid rgba(106, 191, 69, 0.18);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 900px;
+  }
+
+  .research-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+  }
+
+  .research-box p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 0.96rem;
+    margin-bottom: 24px;
+  }
+
+  .research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .research-tag {
+    background: rgba(106, 191, 69, 0.1);
+    border: 1px solid rgba(106, 191, 69, 0.2);
+    color: var(--lime);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  /* SKILLS */
+  #skills {
+    background: rgba(45, 64, 32, 0.25);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .skill-card {
+    background: rgba(45, 64, 32, 0.6);
+    border: 1px solid rgba(106, 191, 69, 0.15);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--lime), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .skill-card:hover {
+    border-color: rgba(106, 191, 69, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .skill-card:hover::before {
+    opacity: 1;
+  }
+
+  .skill-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(106, 191, 69, 0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+
+  .skill-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .skill-card p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .skill-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .tool-tag {
+    background: rgba(106, 191, 69, 0.1);
+    border: 1px solid rgba(106, 191, 69, 0.2);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    color: var(--lime);
+    font-weight: 500;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 28px;
+  }
+
+  .project-card {
+    background: rgba(45, 64, 32, 0.4);
+    border: 1px solid rgba(106, 191, 69, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(106, 191, 69, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .project-placeholder {
+    height: 200px;
+    background: linear-gradient(
+      135deg,
+      rgba(45, 64, 32, 0.9),
+      rgba(26, 38, 16, 1)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+  }
+
+  .project-content {
+    padding: 28px;
+  }
+
+  .project-tag {
+    background: rgba(106, 191, 69, 0.12);
+    border: 1px solid rgba(106, 191, 69, 0.25);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.72rem;
+    color: var(--lime);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  .project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .project-card p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .project-tools {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--lime);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .project-link:hover {
+    gap: 12px;
+  }
+
+  /* ABOUT */
+  #about {
+    background: rgba(45, 64, 32, 0.2);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-photo {
+    width: 100%;
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid rgba(106, 191, 69, 0.2);
+    position: relative;
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+  }
+
+  .about-content p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 0.97rem;
+  }
+
+  .about-content p strong {
+    color: var(--white);
+  }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .highlight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--white);
+  }
+
+  .check {
+    width: 20px;
+    height: 20px;
+    background: rgba(106, 191, 69, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lime);
+    font-size: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  /* CONTACT */
+  #contact {
+    text-align: center;
+  }
+
+  .contact-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: rgba(45, 64, 32, 0.5);
+    border: 1px solid rgba(106, 191, 69, 0.2);
+    border-radius: 28px;
+    padding: 56px;
+  }
+
+  .contact-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+
+  .contact-card h2 span {
+    color: var(--lime);
+  }
+
+  .contact-card p {
+    color: var(--muted);
+    margin-bottom: 36px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(106, 191, 69, 0.1);
+    border: 1px solid rgba(106, 191, 69, 0.25);
+    border-radius: 999px;
+    padding: 12px 22px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    background: rgba(106, 191, 69, 0.2);
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 28px;
+    border-top: 1px solid rgba(106, 191, 69, 0.1);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  footer span {
+    color: var(--lime);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav {
+      padding: 16px 24px;
+    }
+
+    nav ul {
+      gap: 18px;
+    }
+
+    nav ul a {
+      font-size: 0.75rem;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 100px 24px 60px;
+      gap: 40px;
+    }
+
+    .hero-photo {
+      height: 380px;
+    }
+
+    .photo-frame {
+      width: 260px;
+      height: 360px;
+    }
+
+    .stats-strip {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 24px;
+    }
+
+    section {
+      padding: 60px 24px;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .about-photo {
+      height: 340px;
+    }
+
+    .contact-card {
+      padding: 36px 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav ul {
+      display: none;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+    }
+
+    .stats-strip {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-highlights {
+      grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .projects-grid .project-card {
+      min-width: 0;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="logo">TOG</div>
+
+  <ul>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#skills">Capabilities</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-text">
+
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Open to Collaboration
+    </div>
+
+    <h1>
+      Oyinkansola<br>
+      <span>Temiyemi</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Early-Career Nurse Researcher · Healthcare Data & Digital Health
+    </p>
+
+    <p class="hero-tagline">
+      Using data, research, technology, and communication to improve healthcare outcomes.
+    </p>
+
+    <div class="hero-pills">
+      <div class="pill">Digital Health</div>
+      <div class="pill">Research</div>
+      <div class="pill">Healthcare Data</div>
+      <div class="pill">Communication</div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+
+  </div>
+
+
+  <div class="hero-photo">
+
+    <div class="glow-circle"></div>
+
+    <div class="photo-frame">
+      <img
+        src="Blue and Purple Professional Portrait LinkedIn Profile Picture_20260502_145611_0000.png"
+        alt="Oyinkansola Temiyemi"
+      >
+
+      <div class="photo-overlay"></div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STATS -->
+<div class="stats-strip">
+
+  <div class="stat-item">
+    <div class="stat-num">RN</div>
+    <div class="stat-label">Registered Nurse</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num">2+</div>
+    <div class="stat-label">Healthcare Data Projects</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num">5+</div>
+    <div class="stat-label">Data & Research Tools</div>
+  </div>
+
+  <div class="stat-item">
+    <div class="stat-num">∞</div>
+    <div class="stat-label">Learning & Growth</div>
+  </div>
+
+</div>
+
+
+<!-- RESEARCH NICHE -->
+<section id="research">
+
+  <div class="section-label">Research Niche</div>
+
+  <h2 class="section-title">
+    Digital <span>Health Research</span>
+  </h2>
+
+  <p class="section-desc">
+    My research interests centre on understanding how digital technologies,
+    health information systems, and data-driven approaches can improve
+    healthcare delivery, quality, equity, and outcomes.
+  </p>
+
+  <div class="research-box">
+
+    <h3>Exploring Better Healthcare Through Technology & Evidence</h3>
+
+    <p>
+      I am particularly interested in research at the intersection of healthcare,
+      technology, and evidence. My work explores how digital health solutions
+      can be understood, evaluated, implemented, and used to address real
+      healthcare challenges, particularly within African healthcare settings.
+    </p>
+
+    <div class="research-tags">
+      <span class="research-tag">Digital Health</span>
+      <span class="research-tag">Health Information Systems</span>
+      <span class="research-tag">Interoperability</span>
+      <span class="research-tag">Digital Health Equity</span>
+      <span class="research-tag">AI in Healthcare</span>
+      <span class="research-tag">mHealth</span>
+      <span class="research-tag">Telehealth</span>
+      <span class="research-tag">Healthcare Data</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CAPABILITIES -->
+<section id="skills">
+
+  <div class="section-label">Capabilities</div>
+
+  <h2 class="section-title">
+    What I <span>Do</span>
+  </h2>
+
+  <p class="section-desc">
+    I combine clinical knowledge, research, data, technology, and communication
+    to understand healthcare problems and translate information into useful insights.
+  </p>
+
+
+  <div class="skills-grid">
+
+    <!-- DIGITAL HEALTH -->
+    <div class="skill-card">
+
+      <div class="skill-icon">🌐</div>
+
+      <h3>Digital Health Research</h3>
+
+      <p>
+        Exploring how digital technologies, health information systems,
+        and technology-enabled interventions can contribute to better
+        healthcare delivery and outcomes.
+      </p>
+
+      <div class="skill-tools">
+        <span class="tool-tag">Digital Health</span>
+        <span class="tool-tag">Health Information Systems</span>
+        <span class="tool-tag">Interoperability</span>
+        <span class="tool-tag">AI in Healthcare</span>
+        <span class="tool-tag">mHealth</span>
+      </div>
+
+    </div>
+
+
+    <!-- DATA ANALYTICS -->
+    <div class="skill-card">
+
+      <div class="skill-icon">📊</div>
+
+      <h3>Healthcare Data Analytics</h3>
+
+      <p>
+        Transforming healthcare datasets into meaningful insights through
+        data cleaning, querying, analysis, visualization, and interpretation
+        to support research and decision-making.
+      </p>
+
+      <div class="skill-tools">
+        <span class="tool-tag">Excel</span>
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">Power BI</span>
+        <span class="tool-tag">Tableau</span>
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">SPSS</span>
+      </div>
+
+    </div>
+
+
+    <!-- RESEARCH -->
+    <div class="skill-card">
+
+      <div class="skill-icon">🔬</div>
+
+      <h3>Research & Evidence Synthesis</h3>
+
+      <p>
+        Developing research questions, reviewing evidence, analysing
+        information, and communicating findings to contribute to
+        evidence-based healthcare.
+      </p>
+
+      <div class="skill-tools">
+        <span class="tool-tag">Li  nav .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
     color: #8fe45a;
